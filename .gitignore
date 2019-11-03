@@ -1,13 +1,14 @@
 # Ignore IDE files
-/.idea
-/.vscode
-/.history
+.idea
+.vscode
+.history
 
 # Ignore DB import/export files
 /*.gz
 
 # Ignore Drupal installation but not custom modules/themes & config
-/www/*
+
+/www/
 !/www/web/modules/custom
 !/www/web/themes/custom
 !/www/config
