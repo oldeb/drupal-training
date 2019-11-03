@@ -1,0 +1,24 @@
+name: oss-training-drupal8
+recipe: drupal8
+config:
+  database: 'mariadb:10.2'
+  webroot: www/web
+env_file:
+  - .env
+tooling:
+  download-drupal:
+    service: appserver
+    description: Download Drupal using composer
+    cmd: mkdir -p www && composer create-project drupal-composer/drupal-project:8.x-dev . --no-interaction -d=/app/www
+  drupal:
+    service: appserver
+    description: Run Drupal Console commands
+    cmd: drupal --root=/app/www/web
+  drush:
+    service: appserver
+    description: Run Drush commands
+    cmd: drush --root=/app/www/web
+  install-drupal:
+    service: appserver
+    description: (re)install Drupal
+    cmd: drush si standard --root=/app/www/web --site-name="Drupal 8 Training" --account-pass=admin --db-url=mysql://drupal8:drupal8@database:3306/drupal8 -y

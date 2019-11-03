@@ -1,0 +1,7 @@
+# Ignore IDE files
+/.idea
+/.vscode
+/.history
+
+# Ignore DB import/export files
+/*.gz
