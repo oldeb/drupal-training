@@ -9,7 +9,7 @@ tooling:
   download-drupal:
     service: appserver
     description: Download Drupal using composer
-    cmd: mkdir -p /app/www && composer create-project drupal-composer/drupal-project:8.x-dev . --no-interaction -d /app/www
+    cmd: mkdir -p /app/www && composer create-project drupal/recommended-project:8.x . --no-interaction -d /app/www
   drupal:
     service: appserver
     description: Run Drupal Console commands
