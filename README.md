@@ -7,13 +7,12 @@ This project skeleton uses [Lando](https://lando.dev/), please install it before
 `lando start`
 
 ### Download Drupal
-`lando download-drupal`
+`lando download`
 
 ### Install Drupal
-`lando install-drupal`
+`lando install`
 
 ### Other usefull commands
 * Execute a Drush command : `lando drush <your-command>`
-* Execute a Drupal Console command : `lando drupal <your-command>`
 
 More at https://docs.lando.dev/basics/usage.html#default-commands
