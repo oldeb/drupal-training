@@ -1,5 +1,5 @@
 # Open Source School
-## Drupal 8 Training
+## Drupal Training
 
 This project skeleton uses [Lando](https://lando.dev/), please install it before usage.
 
