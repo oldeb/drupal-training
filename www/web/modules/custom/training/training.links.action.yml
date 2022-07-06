@@ -1,0 +1,5 @@
+training.hello.goto:
+  route_name: training.pouet
+  title: 'Go to another route'
+  appears_on:
+    - training.hello

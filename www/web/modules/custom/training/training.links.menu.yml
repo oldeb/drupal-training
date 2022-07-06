@@ -1,0 +1,6 @@
+training.hello_world:
+  title: 'Training hello'
+  route_name: training.hello
+  description: 'Go to training hello world'
+  parent: system.admin_structure
+  weight: 5

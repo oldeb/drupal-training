@@ -1,0 +1,16 @@
+training.hello:
+  path: '/training/hello/{myparam}'
+  defaults:
+    _controller: '\Drupal\training\Controller\TrainingController::hello'
+    _title: 'My training controller'
+    myparam: ''
+  requirements:
+    _permission: 'access content'
+
+training.pouet:
+  path: '/training/pouet'
+  defaults:
+    _controller: '\Drupal\training\Controller\TrainingController::pouet'
+    _title: 'Ma seconde route'
+  requirements:
+    _permission: 'access content'

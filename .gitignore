@@ -7,4 +7,14 @@
 /*.gz
 
 # Ignore project files
-www
+/www/*.*
+/www/vendor
+/www/web/*.*
+/www/web/core
+/www/web/modules/*.*
+/www/web/modules/contrib
+/www/web/sites
+/www/web/profiles/*.*
+/www/web/profiles/contrib
+/www/web/themes/*.*
+/www/web/themes/contrib

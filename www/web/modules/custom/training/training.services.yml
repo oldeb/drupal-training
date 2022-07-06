@@ -1,0 +1,6 @@
+services:
+  training.flash:
+    class: 'Drupal\training\EventSubscriber\TrainingSubscriber'
+    arguments: ['@current_route_match', '@messenger']
+    tags:
+      - {'name': 'event_subscriber'}
