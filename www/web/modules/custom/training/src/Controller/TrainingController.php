@@ -40,20 +40,17 @@ class TrainingController extends ControllerBase {
 
     $nids = $query->execute();
 
-    if (!empty($nids)) {
-      $markup = '<ul>';
+    $ntitles = [];
 
-      foreach ($nids as $nid) {
-        $node = Node::load($nid);
-        $markup .= '<li>' . $node->getTitle() . '</li>';
-      }
-
-      $markup .= '</ul>';
+    foreach ($nids as $nid) {
+      $node = Node::load($nid);
+      $ntitles[] = $node->getTitle();
     }
 
     return [
-      '#type' => 'markup',
-      '#markup' => $markup ?? '',
+      '#type' => 'theme',
+      '#theme' => 'node_title_list',
+      '#titles' => $ntitles,
     ];
   }
 

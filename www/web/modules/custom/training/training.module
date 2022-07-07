@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function training_theme() {
+  return [
+    'node_title_list' => [
+      'variables' => [
+        'titles' => NULL,
+      ]
+    ]
+  ];
+}
+
+function training_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::moduleHandler()->invokeAll('do_something_clever');
+}
+
+function training_do_something_clever() {
+  \Drupal::logger('training')->info('PWET');
+}

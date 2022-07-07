@@ -8,6 +8,7 @@
 
 # Ignore project files
 /www/*.*
+/www/config
 /www/vendor
 /www/web/*.*
 /www/web/core
