@@ -4,10 +4,11 @@
 .history
 
 # Ignore DB import/export files
-/*.gz
+/db
+*.sql.gz
 
 # Ignore project files
-/www/*.*
+/www/*.lock
 /www/config
 /www/vendor
 /www/web/*.*
@@ -19,3 +20,5 @@
 /www/web/profiles/contrib
 /www/web/themes/*.*
 /www/web/themes/contrib
+
+

@@ -34,6 +34,7 @@ class TrainingController extends ControllerBase {
    */
   public function pouet() {
 
+
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'training')
       ->condition('status', Node::PUBLISHED);
