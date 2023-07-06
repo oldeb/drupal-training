@@ -1,11 +1,15 @@
 name: drupal-training
 recipe: drupal10
 config:
-  database: 'mariadb:10.3'
   webroot: www/web
 env_file:
   - .env
 services:
+  database:
+    creds:
+      user: drupal
+      password: drupal
+      database: drupal
   chrome:
     type: compose
     services:
@@ -15,7 +19,7 @@ tooling:
   download:
     service: appserver
     description: Download Drupal core using composer
-    cmd: mkdir -p /app/www && composer create-project drupal/recommended-project:^10 . --no-interaction -d /app/www && composer require drush/drush -d /app/www
+    cmd: mkdir -p /app/www && composer create-project drupal/recommended-project:^10 . --no-interaction -d /app/www && composer require drupal/admin_toolbar drush/drush -d /app/www
   drush:
     service: appserver
     description: Run Drush commands
@@ -27,7 +31,7 @@ tooling:
   install:
     service: appserver
     description: (re)install Drupal
-    cmd: /app/www/vendor/bin/drush si standard --root=/app/www/web --site-name="Drupal Training" --account-pass=admin --db-url=mysql://drupal9:drupal9@database:3306/drupal9 -y
+    cmd: /app/www/vendor/bin/drush si standard --root=/app/www/web --site-name="Drupal Training" --account-pass=admin --db-url=mysql://drupal:drupal@database:3306/drupal -y && /app/www/vendor/bin/drush en admin_toolbar_tools -y && /app/www/vendor/bin/drush uli -l drupal-training.lndo.site node
   test:
     service: appserver
     cmd: "php /app/www/vendor/bin/phpunit -c /app/www/phpunit.xml"
