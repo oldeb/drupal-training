@@ -1,20 +1,33 @@
-name: oss-training-drupal
-recipe: drupal9
+name: drupal-training
+recipe: drupal10
 config:
   database: 'mariadb:10.3'
   webroot: www/web
 env_file:
   - .env
+services:
+  chrome:
+    type: compose
+    services:
+      image: drupalci/webdriver-chromedriver:production
+      command: chromedriver --log-path=/tmp/chromedriver.log --verbose --whitelisted-ips=
 tooling:
   download:
     service: appserver
     description: Download Drupal core using composer
-    cmd: mkdir -p /app/www && composer create-project drupal/recommended-project . --no-interaction -d /app/www && composer require drush/drush -d /app/www
+    cmd: mkdir -p /app/www && composer create-project drupal/recommended-project:^10 . --no-interaction -d /app/www && composer require drush/drush -d /app/www
   drush:
     service: appserver
     description: Run Drush commands
     cmd: /app/www/vendor/bin/drush --root=/app/www/web
+  drupal:
+    service: appserver
+    description: Run Drupal script
+    cmd: php /app/www/web/core/scripts/drupal
   install:
     service: appserver
     description: (re)install Drupal
     cmd: /app/www/vendor/bin/drush si standard --root=/app/www/web --site-name="Drupal Training" --account-pass=admin --db-url=mysql://drupal9:drupal9@database:3306/drupal9 -y
+  test:
+    service: appserver
+    cmd: "php /app/www/vendor/bin/phpunit -c /app/www/phpunit.xml"
