@@ -32,6 +32,10 @@ tooling:
     service: appserver
     description: (re)install Drupal
     cmd: /app/www/vendor/bin/drush si standard --root=/app/www/web --site-name="Drupal Training" --account-pass=admin --db-url=mysql://drupal:drupal@database:3306/drupal -y && /app/www/vendor/bin/drush en admin_toolbar_tools -y && /app/www/vendor/bin/drush uli -l drupal-training.lndo.site node
+  install-fr:
+    service: appserver
+    description: (re)install Drupal in French
+    cmd: /app/www/vendor/bin/drush si standard --locale=fr --root=/app/www/web --site-name="Drupal Training" --account-pass=admin --db-url=mysql://drupal:drupal@database:3306/drupal -y && /app/www/vendor/bin/drush en admin_toolbar_tools -y && /app/www/vendor/bin/drush uli -l drupal-training.lndo.site node
   test:
     service: appserver
     cmd: "php /app/www/vendor/bin/phpunit -c /app/www/phpunit.xml"
