@@ -4,7 +4,7 @@
 This project skeleton uses the following Docker wrappers :
 
 - [Lando](https://lando.dev/)
-- [DDEV](https://ddev.readthedocs.io/)
+- [DDEV](https://ddev.readthedocs.io/) (WIP)
 
 please install one of them before usage.
 
