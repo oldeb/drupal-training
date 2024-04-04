@@ -1,0 +1,8 @@
+services:
+  training.time_manager:
+    class: Drupal\training\Manager\TimeManager
+  training.hello_flash:
+    class: Drupal\training\EventSubscriber\HelloFlashSubscriber
+    arguments: ['@current_route_match', '@messenger']
+    tags:
+     - { name: event_subscriber }

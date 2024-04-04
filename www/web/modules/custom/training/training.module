@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function training_form_training_form_alter(&$form) {
+  $form['email']['#attributes']['placeholder'] = 'test@example.com';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function training_node_update(NodeInterface $node) {
+  $nid = $node->id();
+  \Drupal::logger('training')->info("The node $nid has been updated.");
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function training_theme() {
+  return [
+    'training_nodes' => [
+      'variables' => [
+        'titles' => NULL
+      ],
+    ],
+  ];
+}

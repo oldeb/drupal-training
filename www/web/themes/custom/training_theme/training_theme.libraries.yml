@@ -1,0 +1,11 @@
+global-styling:
+  css:
+    base:
+      css/global.css: {}
+hello-msg:
+  js:
+    js/main.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

@@ -1,0 +1,22 @@
+training.hello:
+  path: /training/hello/{name}
+  defaults:
+    _controller: '\Drupal\training\Controller\TrainingController::hello'
+    _title_callback: '\Drupal\training\Controller\TrainingController::helloTitle'
+    name: NULL
+  requirements:
+    _permission: 'access content'
+training.foobar:
+  path: /training/foobar
+  defaults:
+    _controller: '\Drupal\training\Controller\TrainingController::foobar'
+    _title: 'FooBar'
+  requirements:
+    _permission: 'access content'
+training.form:
+  path: /training/form
+  defaults:
+    _form: '\Drupal\training\Form\TrainingForm'
+    _title: 'Training Form'
+  requirements:
+    _permission: 'access content'

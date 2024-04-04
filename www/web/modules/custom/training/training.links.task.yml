@@ -1,0 +1,8 @@
+training.hello_task:
+  route_name: training.hello
+  base_route: training.hello
+  title: 'Say hello'
+training.form_task:
+  route_name: training.form
+  base_route: training.hello
+  title: "Go to form !"

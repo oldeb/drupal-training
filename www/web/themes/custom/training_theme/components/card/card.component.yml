@@ -1,0 +1,14 @@
+name: Card
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The card title
+    text:
+      type: string
+      title: Text
+      description: The card text

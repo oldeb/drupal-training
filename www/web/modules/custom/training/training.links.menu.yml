@@ -1,0 +1,5 @@
+training.hellow:
+  route_name: training.hello
+  title: 'Say hello'
+  description: 'Go to training hello world controller'
+  parent: system.admin_content

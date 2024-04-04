@@ -1,0 +1,10 @@
+training.hello_action:
+  route_name: training.hello
+  title: 'Say hello'
+  appears_on:
+    - training.foobar
+training.foobar_action:
+  route_name: training.foobar
+  title: 'FooBar'
+  appears_on:
+    - training.hello

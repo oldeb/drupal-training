@@ -1,0 +1,5 @@
+name: Training
+description: The training module
+type: module
+package: Smile
+core_version_requirement: ^10
