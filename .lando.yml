@@ -15,6 +15,9 @@ services:
     services:
       image: drupalci/webdriver-chromedriver:production
       command: chromedriver --log-path=/tmp/chromedriver.log --verbose --whitelisted-ips=
+proxy:
+  appserver:
+    - formation-drupal.lndo.site
 tooling:
   download:
     service: appserver
