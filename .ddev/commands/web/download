@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+## Description: Download Drupal & Drush
+## Usage: download
+## Example: ddev download
+
+set -e
+
+composer create drupal/recommended-project tmp
+rsync -av tmp/ .
+rm -rf tmp
+composer require drush/drush

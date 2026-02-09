@@ -1,10 +1,9 @@
-# Ignore IDE files
-.idea
-.vscode
-.history
-
-# Ignore DB import/export files
-/*.gz
-
-# Ignore project files
-www
+/recipes
+/tmp
+/vendor
+/web
+!/web/sites/default/settings.php
+.editorconfig
+.gitattributes
+composer.*
+*.txt

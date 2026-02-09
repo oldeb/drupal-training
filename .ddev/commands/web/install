@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Basic Drupal installation
+## Usage: install
+## Example: ddev install
+
+drush si --account-pass=admin -y

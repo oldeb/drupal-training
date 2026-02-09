@@ -1,23 +1,28 @@
 # Open Source School
 ## Drupal Training
 
-This project skeleton uses the following Docker wrappers :
-
-- [Lando](https://lando.dev/)
-- [DDEV](https://ddev.readthedocs.io/) (WIP)
-
-please install one of them before usage.
+This project skeleton uses [DDEV](https://ddev.readthedocs.io/) as a Docker wrapper.
+Please install it before usage.
 
 ### Startup your environment
-`lando start` or `ddev start`
+`ddev start`
 
 ### Download Drupal
-`lando download` or `ddev composer create drupal/recommended-project && ddev require drush/drush`
+`ddev download`
 
 ### Install Drupal
-`lando install` or `ddev drush si --account-pass=admin -y`
+`ddev install` or `ddev drush si --account-pass=admin -y`
+
+### Access installed app
+`ddev launch` or https://drupal-training.ddev.site/
+
+#### Access administration
+URL: https://drupal-training.ddev.site/user/login
+Username: *admin*
+Password: *admin*
 
 ### Other usefull commands
-* Execute a Drush command : `lando drush <your-command>` or `ddev drush <your-command>`
+* Execute a Drush command : `ddev drush <your-command>`
+* [All Drush commands](https://www.drush.org/12.0.1/commands/all/)
 
-More at [Lando commands](https://docs.lando.dev/basics/usage.html#default-commands) and [DDEV commands](https://ddev.readthedocs.io/en/stable/users/usage/cli/)
+More [DDEV commands](https://ddev.readthedocs.io/en/stable/users/usage/cli/)
