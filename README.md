@@ -18,7 +18,9 @@ Please install it before usage.
 
 #### Access administration
 URL: https://drupal-training.ddev.site/user/login
+
 Username: *admin*
+
 Password: *admin*
 
 ### Other usefull commands
